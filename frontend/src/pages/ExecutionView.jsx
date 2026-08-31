@@ -2,7 +2,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { runWorkflow, stepRun, verifyRun, approveRun, getRunStatus } from '../api';
 import StatusBadge from '../components/common/StatusBadge';
-import { Loader2, CheckCircle, AlertTriangle, ShieldAlert, XCircle, ArrowRight, FileText, ArrowLeft, Zap, Terminal } from 'lucide-react';
+import { Loader2, CheckCircle, AlertTriangle, ShieldAlert, XCircle, ArrowRight, FileText, ArrowLeft, Zap, Terminal, UploadCloud } from 'lucide-react';
 
 const PHASES = [
   'PREFLIGHT', 'CONTEXT', 'TRUST', 'RISK', 'DECISION', 'EXECUTION', 'VERIFICATION'
@@ -97,6 +97,38 @@ export default function ExecutionView() {
     }
   };
 
+  const handleReplaceFile = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    const logs = runState?.logs || [];
+    const errorLog = logs.find(l => l.msg?.includes('REQUIRED FILE NOT FOUND'));
+    let originalFile = "unknown";
+    if (errorLog) {
+       const match = errorLog.msg.match(/'([^']+)'/);
+       if (match) originalFile = match[1];
+       else originalFile = errorLog.msg.replace('REQUIRED FILE NOT FOUND: ', '').replace(/[{}]/g, '').replace(/'/g, '').trim();
+    }
+
+    try {
+      // Simulate file upload delay for MVP
+      await new Promise(r => setTimeout(r, 1000));
+      await approveRun(runId, 'REPLACE', `file_upload_${file.name}`, originalFile);
+      setRunState(prev => ({ ...prev, status: 'RUNNING' }));
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  const handleCancelFile = async () => {
+    try {
+      await approveRun(runId, 'CANCEL');
+      setRunState(prev => ({ ...prev, status: 'CANCELLED' }));
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   if (error) {
     return (
       <div className="flex flex-col items-center justify-center h-96 text-center animate-fade-in">
@@ -125,6 +157,9 @@ export default function ExecutionView() {
   // Extract the most recent log for the live heading animation
   const logs = runState.logs || [];
   const latestLog = logs.length > 0 ? logs[logs.length - 1].msg : "Initializing sandbox...";
+
+  const isMissingFile = runState.status === 'WAITING_FOR_FILE_REPLACEMENT';
+  const missingFileLog = logs.find(l => l.msg?.includes('REQUIRED FILE NOT FOUND'))?.msg || 'Required file';
 
   return (
     <div className="max-w-4xl mx-auto w-full animate-fade-in pb-20">
@@ -175,7 +210,7 @@ export default function ExecutionView() {
         <div className="md:col-span-2 relative min-h-[400px]">
           
           {/* Running State: Live Logs */}
-          {!isTerminal && runState.status !== 'WAITING_FOR_APPROVAL' && (
+          {!isTerminal && runState.status !== 'WAITING_FOR_APPROVAL' && !isMissingFile && (
             <div className="glass-panel h-full flex flex-col p-6 animate-fade-in hover:-translate-y-1 transition-transform duration-300">
               <div className="flex items-center gap-3 mb-6 bg-surface/50 p-4 rounded-xl border border-primary/20 shadow-[0_0_15px_rgba(99,102,241,0.1)]">
                 <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-primary/10">
@@ -208,6 +243,35 @@ export default function ExecutionView() {
                   ))
                 )}
                 <div ref={logsEndRef} />
+              </div>
+            </div>
+          )}
+
+          {/* Missing File Modal */}
+          {isMissingFile && (
+            <div className="glass-panel border-danger/50 h-full flex flex-col items-center justify-center p-8 text-center animate-fade-in shadow-[0_0_40px_rgba(239,68,68,0.15)] relative overflow-hidden hover:-translate-y-1 transition-transform duration-300">
+              <div className="absolute top-0 left-0 w-full h-1 bg-danger animate-pulse" />
+              <XCircle size={48} className="text-danger mb-6" />
+              <h2 className="text-2xl font-bold text-white mb-2">Required File Not Found</h2>
+              <p className="text-gray-400 mb-8 max-w-md">
+                The workflow cannot proceed because an expected input file is missing from the environment.
+              </p>
+              
+              <div className="w-full bg-surface border border-border rounded-lg p-5 text-left mb-8">
+                <span className="text-xs text-gray-500 uppercase block mb-1 font-semibold">Missing File Signature</span>
+                <span className="text-sm font-mono text-danger bg-danger/10 px-3 py-1.5 rounded-md inline-block border border-danger/20 break-all">
+                  {missingFileLog.replace('REQUIRED FILE NOT FOUND: ', '')}
+                </span>
+              </div>
+
+              <div className="flex gap-4 w-full">
+                <button onClick={handleCancelFile} className="btn-secondary flex-1 py-3 hover:bg-danger/10 hover:text-danger hover:border-danger/30 transition-colors">Abort Workflow</button>
+                <div className="relative flex-1">
+                  <input type="file" onChange={handleReplaceFile} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
+                  <button className="btn bg-primary w-full text-white flex items-center justify-center gap-2 hover:bg-indigo-500 py-3 font-bold shadow-[0_0_16px_rgba(99,102,241,0.4)] transition-all">
+                    <UploadCloud size={18} /> Upload Replacement
+                  </button>
+                </div>
               </div>
             </div>
           )}
