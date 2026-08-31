@@ -2,7 +2,7 @@
 
 > **Teach once. Recall intelligently. Act safely.**
 
-🌐 Live Demo: [http://recallyn.vercel.app](https://recallyn,vercel.app)
+🌐 Live Demo: [http://recallyn.vercel.app](https://recallyn.vercel.app)
 📦 **GitHub:** [https://github.com/Anuj779/Recallyn](https://github.com/Anuj779/Recallyn)
 📌 **MVP Status:** Web Demonstration (Core Engine validation)
 
