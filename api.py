@@ -3,7 +3,7 @@ import uuid
 from fastapi import UploadFile, File
 import os
 import sys
-from typing import Dict
+from typing import Dict, Optional
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -36,8 +36,8 @@ class RunRequest(BaseModel):
 
 class ApproveRequest(BaseModel):
     decision: str
-    file_id: str = None
-    original_file_id: str = None # "APPROVE" or "CANCEL"
+    file_id: Optional[str] = None
+    original_file_id: Optional[str] = None # "APPROVE" or "CANCEL"
 
 @app.get("/health")
 def health_check():
