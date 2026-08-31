@@ -1,0 +1,67 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-gray-300 font-sans antialiased;
+    /* Deep premium radial gradient at the top center */
+    background: radial-gradient(circle at 50% -20%, #15182e 0%, #040509 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  /* Premium Glass Cards */
+  .glass-panel {
+    @apply bg-surface/80 backdrop-blur-xl border border-border rounded-2xl;
+    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+  
+  /* Button System */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95;
+  }
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primaryHover hover:shadow-[0_0_16px_rgba(99,102,241,0.4)];
+  }
+  .btn-secondary {
+    @apply btn bg-white/5 border border-border text-gray-200 hover:bg-white/10 hover:text-white;
+  }
+  .btn-danger {
+    @apply btn bg-danger/10 border border-danger/20 text-danger hover:bg-danger hover:text-white;
+  }
+}
+
+/* Global Animated Background Flow */
+.global-flow-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(at 80% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(139, 92, 246, 0.03) 0px, transparent 50%);
+  animation: pulseSlow 15s ease-in-out infinite alternate;
+}
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255,255,255,0.2);
+  }
+}

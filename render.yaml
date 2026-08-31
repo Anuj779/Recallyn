@@ -1,0 +1,20 @@
+﻿services:
+  - type: web
+    name: recallyn-backend
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python -m uvicorn api:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: GROQ_API_KEY
+        sync: false
+    
+  - type: web
+    name: recallyn-frontend
+    env: node
+    buildCommand: "cd frontend && npm install && npm run build"
+    startCommand: "cd frontend && npm run preview"
+    envVars:
+      - key: NODE_VERSION
+        value: 20.10.0

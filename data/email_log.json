@@ -1,0 +1,198 @@
+[
+  {
+    "timestamp": "2026-08-29T18:33:17.863650",
+    "to": "hr@company.local",
+    "subject": "Test Subject",
+    "body": "Test body content.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-29T18:34:56.301464",
+    "to": "hr@company.local",
+    "subject": "Weekly Report Summary",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-29T18:36:28.334996",
+    "to": "hr@company.local",
+    "subject": "Summary of $file_path",
+    "body": "This dataset contains 3 record(s) with 4 column(s): Name, Age, Role, Email. First data row: Alice,30,Engineer,alice@company.local.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-29T18:39:44.097052",
+    "to": "carol@company.local",
+    "subject": "Weekly Report",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T00:46:54.253320",
+    "to": "carol@company.local",
+    "subject": "Weekly Report",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T00:53:26.416507",
+    "to": "carol@company.local",
+    "subject": "Weekly Report Summary",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T01:13:43.462159",
+    "to": "carol@company.local",
+    "subject": "Weekly Report Summary",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T01:17:30.674491",
+    "to": "carol@company.local",
+    "subject": "Weekly Report Summary",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T01:19:38.922543",
+    "to": "priya@company.local",
+    "subject": "Weekly Report Summary",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T01:20:15.958279",
+    "to": "priya@company.local",
+    "subject": "Weekly Report",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T01:21:30.605711",
+    "to": "priya@company.local",
+    "subject": "Weekly Report Summary",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T01:21:49.962030",
+    "to": "priya@company.local",
+    "subject": "Weekly Report",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T01:23:09.821856",
+    "to": "hr@company.local",
+    "subject": "Summary of user_data.csv",
+    "body": "This dataset contains 3 record(s) with 4 column(s): Name, Age, Role, Email. First data row: Alice,30,Engineer,alice@company.local.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T01:23:09.859378",
+    "to": "priya@company.local",
+    "subject": "Weekly Report",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T02:07:00.044709",
+    "to": "hr@company.local",
+    "subject": "Summary of user_data.csv",
+    "body": "This dataset contains 3 record(s) with 4 column(s): Name, Age, Role, Email. First data row: Alice,30,Engineer,alice@company.local.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T02:10:29.157668",
+    "to": "priya@company.local",
+    "subject": "Weekly Report",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T02:19:18.639177",
+    "to": "priya@company.local",
+    "subject": "Weekly Report",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T02:21:39.117267",
+    "to": "carol@company.local",
+    "subject": "Weekly Report Summary",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T02:34:09.810250",
+    "to": "carol@company.local",
+    "subject": "Weekly Report Summary",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T13:26:58.902181",
+    "to": "carol@company.local",
+    "subject": "Weekly Report",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T13:28:17.804099",
+    "to": "carol@company.local",
+    "subject": "Weekly Report",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T13:29:15.528263",
+    "to": "priya@company.local",
+    "subject": "Weekly Report",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T13:32:28.389234",
+    "to": "carol@company.local",
+    "subject": "Weekly Report",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T13:35:09.306677",
+    "to": "carol@company.local",
+    "subject": "Weekly Report",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T15:37:24.526566",
+    "to": "carol@company.local",
+    "subject": "Weekly Report",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T19:08:45.669856",
+    "to": "carol@company.local",
+    "subject": "Weekly Report Summary",
+    "body": "This dataset contains 5 record(s) with 3 column(s): Name, Department, Sales. First data row: Alice,Engineering,45000.",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T19:10:12.519584",
+    "to": "anujzare79@gmail.com",
+    "subject": "Report Data",
+    "body": "Name,Department,Sales\nAlice,Engineering,45000\nBob,HR,32000\nCarol,Sales,67000\nDavid,Engineering,51000\nEve,Marketing,38000",
+    "status": "sent (simulated)"
+  },
+  {
+    "timestamp": "2026-08-30T19:10:39.380740",
+    "to": "anujzare79@gmail.com",
+    "subject": "Report Data",
+    "body": "Name,Department,Sales\nAlice,Engineering,45000\nBob,HR,32000\nCarol,Sales,67000\nDavid,Engineering,51000\nEve,Marketing,38000",
+    "status": "sent (simulated)"
+  }
+]

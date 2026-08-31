@@ -1,0 +1,57 @@
+{
+  "_comment": "This file simulates the current real-world environment for Recallis demos. Edit this file to simulate context drift. For example, change manager.name from 'Carol Singh' to 'Priya Sharma' to trigger DRIFT detection.",
+  "contacts": {
+    "manager": {
+      "name": "Carol Singh",
+      "email": "carol@company.local",
+      "status": "ACTIVE"
+    },
+    "hr": {
+      "name": "HR Team",
+      "email": "hr@company.local",
+      "status": "ACTIVE"
+    },
+    "ceo": {
+      "name": "Anil Kapoor",
+      "email": "ceo@company.local",
+      "status": "ACTIVE"
+    },
+    "developer": {
+      "name": "Alice Sharma",
+      "email": "alice@company.local",
+      "status": "ACTIVE"
+    },
+    "sales": {
+      "name": "David Khan",
+      "email": "david@company.local",
+      "status": "ACTIVE"
+    },
+    "marketing": {
+      "name": "Eve Nair",
+      "email": "eve@company.local",
+      "status": "ACTIVE"
+    }
+  },
+  "files": {
+    "report.csv": {
+      "exists": true,
+      "size_kb": 4,
+      "type": "csv"
+    },
+    "user_data.csv": {
+      "exists": true,
+      "size_kb": 2,
+      "type": "csv"
+    },
+    "notes.txt": {
+      "exists": true,
+      "size_kb": 1,
+      "type": "txt"
+    },
+    "sales_data.csv": {
+      "exists": true,
+      "size_kb": 3,
+      "type": "csv"
+    }
+  }
+}

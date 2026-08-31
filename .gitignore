@@ -1,0 +1,31 @@
+﻿# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Android build and cache files
+android/*/build
+android/*/.gradle
+android/.gradle
+android/*/.idea
+*.hprof
+*.apk
+*.aab
+
+# Frontend / Node
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.eslintcache
+npm-debug.log*
+
+# Recallyn memory and history
+data/run_history.json
+data/workflows.json
