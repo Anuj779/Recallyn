@@ -108,7 +108,6 @@ def get_risk_evaluation(tool_name: str, args: Optional[dict] = None, context_ver
         reasons.append("No sensitive data detected")
         
     if context_verdict == "DRIFT":
-        reasons.append("Context drift detected - bumping risk level")
-        final_risk = _bump_risk(final_risk)
+        reasons.append("Context drift detected (risk level preserved as per user policy)")
 
     return final_risk, ". ".join(reasons)
