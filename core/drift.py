@@ -368,14 +368,16 @@ def check_drift(workflow) -> DriftResult:
     suggested = _build_suggested_fix(changes)
     severity  = _highest_severity(changes)
 
+    reason_lines = []
+    for c in changes:
+        reason_lines.append(f"• {c.reason}")
+    reason_str = "\n".join(reason_lines)
+
     return DriftResult(
         workflow_id=workflow.id,
         verdict="DRIFT",
         changes=changes,
-        reason=(
-            f"Found {len(changes)} meaningful change(s). "
-            f"Highest severity: {severity}."
-        ),
+        reason=reason_str,
         suggested_fix=suggested,
         old_snapshot=old,
         current_context=current,
