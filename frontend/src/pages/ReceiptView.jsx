@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getReceipt } from '../api';
 import StatusBadge from '../components/common/StatusBadge';
@@ -127,6 +127,17 @@ export default function ReceiptView() {
               <span className="text-sm font-mono text-gray-300 flex items-center gap-1.5"><FileKey size={14}/> SECURED</span>
             </div>
           </div>
+
+          {/* Context Drift Reason */}
+          {driftVerdict === "DRIFT" && receipt.drift_result?.details && (
+            <div className="mb-12 p-4 bg-warning/10 border border-warning/20 rounded-lg flex items-start gap-3 animate-fade-in">
+              <AlertTriangle className="text-warning mt-0.5 shrink-0" size={18} />
+              <div>
+                <h4 className="text-sm font-bold text-warning mb-1">Context Drift Details</h4>
+                <p className="text-sm text-gray-300 leading-relaxed">{receipt.drift_result.details}</p>
+              </div>
+            </div>
+          )}
 
           {/* Execution Log */}
           <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-6 border-b border-border/50 pb-2">Execution Trace</h3>
