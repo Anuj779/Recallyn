@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { runWorkflow, stepRun, verifyRun, approveRun, getRunStatus } from '../api';
 import StatusBadge from '../components/common/StatusBadge';
@@ -301,6 +301,16 @@ export default function ExecutionView() {
                       <AlertTriangle size={14} /> {runState.pending_action?.risk || 'HIGH'}
                     </span>
                   </div>
+
+                  {runState.drift_result?.verdict === 'DRIFT' && runState.drift_result?.details && (
+                    <div className="animate-fade-in">
+                      <span className="text-xs text-warning uppercase block mb-1 font-bold flex items-center gap-1.5"><AlertTriangle size={12}/> Context Drift Details</span>
+                      <p className="text-sm text-gray-200 bg-warning/10 p-3 rounded-md border border-warning/20 leading-relaxed font-mono shadow-inner">
+                        {runState.drift_result.details}
+                      </p>
+                    </div>
+                  )}
+
                   <div>
                     <span className="text-xs text-gray-500 uppercase block mb-1">Why approval is needed</span>
                     <p className="text-sm text-gray-200 bg-white/5 p-3 rounded-md border border-white/5 leading-relaxed">
